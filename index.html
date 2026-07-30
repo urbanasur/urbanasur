@@ -7,7 +7,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Urbana Sur FM</title>
+.live{
+    display:inline-block;
+    background:#cc0000;
+    color:white;
+    padding:8px 18px;
+    border-radius:20px;
+    font-weight:bold;
+    animation:parpadeo 1s infinite;
+}
 
+@keyframes parpadeo{
+    50%{
+        opacity:.4;
+    }
+}
 <style>
 
 body{
@@ -200,7 +214,7 @@ button:hover{
 <div class="player">
 
 
-
+<div class="live">🔴 EN VIVO</div>
 <h2>🎸 URBANA SUR FM</h2>
 
 
