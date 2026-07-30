@@ -24,7 +24,7 @@ display:flex;
 justify-content:center;
 align-items:center;
 
-height:100vh;
+min-height:100vh;
 margin:0;
 
 }
@@ -53,6 +53,7 @@ box-shadow:
 }
 
 
+
 /* LOGO */
 
 .logo{
@@ -63,11 +64,9 @@ font-weight:bold;
 
 color:#ff2222;
 
-text-shadow:
-0 0 10px red,
-0 0 20px red;
+text-shadow:0 0 15px red;
 
-margin-bottom:10px;
+margin-bottom:15px;
 
 }
 
@@ -103,31 +102,12 @@ opacity:.4;
 }
 
 
-/* OYENTES */
-
-.listeners{
-
-margin-top:15px;
-
-background:#222;
-
-padding:8px;
-
-border-radius:10px;
-
-color:#00ff66;
-
-font-weight:bold;
-
-}
-
-
 
 /* ECUALIZADOR */
 
 .equalizer{
 
-height:60px;
+height:55px;
 
 display:flex;
 
@@ -146,27 +126,25 @@ margin:20px;
 
 width:8px;
 
-background:#ff0000;
+background:red;
 
-animation:move 1s infinite ease-in-out;
+animation:movimiento 1s infinite;
 
 }
 
 
-.bar:nth-child(1){height:20px;animation-delay:.1s;}
+.bar:nth-child(1){height:20px;}
 .bar:nth-child(2){height:45px;animation-delay:.2s;}
-.bar:nth-child(3){height:30px;animation-delay:.3s;}
-.bar:nth-child(4){height:55px;animation-delay:.4s;}
-.bar:nth-child(5){height:35px;animation-delay:.5s;}
-.bar:nth-child(6){height:50px;animation-delay:.6s;}
-.bar:nth-child(7){height:25px;animation-delay:.7s;}
+.bar:nth-child(3){height:30px;animation-delay:.4s;}
+.bar:nth-child(4){height:55px;animation-delay:.6s;}
+.bar:nth-child(5){height:35px;animation-delay:.8s;}
 
 
-@keyframes move{
+@keyframes movimiento{
 
 50%{
 
-transform:scaleY(.4);
+transform:scaleY(.3);
 
 }
 
@@ -174,52 +152,11 @@ transform:scaleY(.4);
 
 
 
-/* TITULO */
+/* REPRODUCTOR */
 
-h2{
+.radio{
 
-color:#ff3333;
-
-}
-
-
-/* BOTONES */
-
-button{
-
-width:120px;
-
-padding:15px;
-
-margin:10px;
-
-border:none;
-
-border-radius:8px;
-
-font-size:18px;
-
-font-weight:bold;
-
-cursor:pointer;
-
-}
-
-
-.play{
-
-background:#00aa00;
-
-color:white;
-
-}
-
-
-.stop{
-
-background:#cc0000;
-
-color:white;
+margin-top:20px;
 
 }
 
@@ -227,10 +164,9 @@ color:white;
 
 /* REDES */
 
-
 .redes{
 
-margin-top:20px;
+margin-top:25px;
 
 }
 
@@ -294,14 +230,6 @@ color:#ff0000;
 </div>
 
 
-<div class="listeners">
-
-👥 Oyentes ahora: 1
-
-</div>
-
-
-
 <div class="equalizer">
 
 <div class="bar"></div>
@@ -309,58 +237,52 @@ color:#ff0000;
 <div class="bar"></div>
 <div class="bar"></div>
 <div class="bar"></div>
-<div class="bar"></div>
-<div class="bar"></div>
 
 </div>
-
 
 
 <h2>📻 Radio Online 24 Horas</h2>
 
 
-
-<button class="play" onclick="playRadio()">
-
-▶ PLAY
-
-</button>
+<div class="radio">
 
 
-<button class="stop" onclick="stopRadio()">
+<div class="cstrEmbed"
+data-type="newStreamPlayer"
+data-publicToken="743aea0d-2aef-435e-978a-baaf792348a5"
+data-theme="dark">
 
-■ STOP
-
-</button>
+</div>
 
 
-
-<audio id="radio">
-
-<source src="https://sapircast.caster.fm:19235/vV9Du?token=31f177849cb0bb3341f4e7d8761f9798" type="audio/mpeg">
-
-</audio>
+</div>
 
 
 
 <div class="redes">
 
 
-<a class="instagram" href="https://www.instagram.com/urbanasurchingolo/" target="_blank">
+<a class="instagram"
+href="https://www.instagram.com/urbanasurchingolo/"
+target="_blank">
 
 📸 Instagram @urbanasurchingolo
 
 </a>
 
 
-<a class="facebook" href="https://www.facebook.com/profile.php?id=61574009805190" target="_blank">
+<a class="facebook"
+href="https://www.facebook.com/profile.php?id=61574009805190"
+target="_blank">
 
 👍 Facebook David Quinteros
 
 </a>
 
 
-<a class="youtube" href="https://www.youtube.com/@urbanasur32" target="_blank">
+<a class="youtube"
+href="https://www.youtube.com/@urbanasur32"
+target="_blank">
 
 ▶ YouTube @urbanasur32
 
@@ -373,30 +295,7 @@ color:#ff0000;
 </div>
 
 
-
-<script>
-
-
-const radio=document.getElementById("radio");
-
-
-function playRadio(){
-
-radio.play();
-
-}
-
-
-function stopRadio(){
-
-radio.pause();
-
-radio.currentTime=0;
-
-}
-
-
-</script>
+<script src="https://cdn.cloud.caster.fm/widgets/embed.js"></script>
 
 
 </body>
