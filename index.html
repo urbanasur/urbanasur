@@ -11,73 +11,113 @@
 <style>
 
 body{
+
 margin:0;
-height:100vh;
+min-height:100vh;
 
 background:
 linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.85)),
 url("https://images.unsplash.com/photo-1598488035139-bdbb2231ce04")
-center/cover;
+center/cover no-repeat;
 
-font-family:Arial;
+font-family:Arial,Helvetica,sans-serif;
+
 display:flex;
 justify-content:center;
 align-items:center;
+
 color:white;
+
 }
+
 
 
 .caja{
 
 width:380px;
-background:#111;
+
+min-height:520px;
+
+box-sizing:border-box;
+
+background:rgba(15,15,15,.93);
+
 padding:25px;
+
 border-radius:20px;
+
 border:2px solid red;
+
 text-align:center;
-box-shadow:0 0 30px red;
+
+box-shadow:
+
+0 0 25px red,
+0 0 50px rgba(255,0,0,.5);
 
 }
+
+
 
 
 h1{
 
+margin-top:0;
+
+font-size:34px;
+
 color:#ff2222;
-text-shadow:0 0 10px red;
+
+text-shadow:0 0 15px red;
 
 }
 
 
+
 .live{
 
-background:red;
-padding:8px 20px;
-border-radius:20px;
 display:inline-block;
+
+background:#cc0000;
+
+padding:8px 22px;
+
+border-radius:20px;
+
+font-weight:bold;
+
 animation:parpadeo 1s infinite;
 
 }
 
 
+
 @keyframes parpadeo{
 
-50%{opacity:.4;}
+50%{
+
+opacity:.4;
+
+}
 
 }
 
 
 
-button{
 
-padding:15px 35px;
-font-size:20px;
-font-weight:bold;
-border:0;
-border-radius:10px;
-cursor:pointer;
-background:#00aa00;
-color:white;
-margin:20px;
+.eq{
+
+height:70px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+gap:6px;
+
+margin:15px 0;
 
 }
 
@@ -85,39 +125,190 @@ margin:20px;
 
 .eq span{
 
-display:inline-block;
-width:8px;
-height:35px;
+width:9px;
+
+height:40px;
+
 background:red;
-margin:4px;
+
 animation:audio 1s infinite;
 
 }
 
 
+
+.eq span:nth-child(2){
+
+animation-delay:.2s;
+
+height:55px;
+
+}
+
+
+.eq span:nth-child(3){
+
+animation-delay:.4s;
+
+height:30px;
+
+}
+
+
+.eq span:nth-child(4){
+
+animation-delay:.6s;
+
+height:60px;
+
+}
+
+
+.eq span:nth-child(5){
+
+animation-delay:.8s;
+
+height:35px;
+
+}
+
+
+
 @keyframes audio{
 
-50%{height:10px;}
+50%{
+
+transform:scaleY(.3);
+
+}
 
 }
 
 
 
-a{
 
-display:block;
-margin:12px;
-text-decoration:none;
+.controles{
+
+height:90px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+gap:15px;
+
+}
+
+
+
+button{
+
+width:120px;
+
+padding:15px;
+
+font-size:18px;
+
 font-weight:bold;
 
+border:none;
+
+border-radius:10px;
+
+cursor:pointer;
+
 }
 
 
-.instagram{color:#ff4b91;}
-.facebook{color:#1877f2;}
-.youtube{color:red;}
+
+.play{
+
+background:#00aa00;
+
+color:white;
+
+}
+
+
+
+.stop{
+
+background:#cc0000;
+
+color:white;
+
+}
+
+
+
+button:hover{
+
+transform:scale(1.05);
+
+}
+
+
+
+
+audio{
+
+display:none;
+
+}
+
+
+
+
+.redes{
+
+margin-top:20px;
+
+}
+
+
+
+.redes a{
+
+display:block;
+
+margin:12px;
+
+font-weight:bold;
+
+text-decoration:none;
+
+}
+
+
+
+.instagram{
+
+color:#ff4b91;
+
+}
+
+
+
+.facebook{
+
+color:#1877f2;
+
+}
+
+
+
+.youtube{
+
+color:#ff0000;
+
+}
+
+
 
 </style>
+
 
 </head>
 
@@ -132,11 +323,15 @@ font-weight:bold;
 
 
 <div class="live">
+
 🔴 EN VIVO
+
 </div>
 
 
+
 <h2>📻 Radio Online 24 Horas</h2>
+
 
 
 <div class="eq">
@@ -150,18 +345,28 @@ font-weight:bold;
 </div>
 
 
-<button onclick="playRadio()">
+
+
+<div class="controles">
+
+
+<button class="play" onclick="playRadio()">
 
 ▶ PLAY
 
 </button>
 
 
-<button onclick="stopRadio()">
+
+<button class="stop" onclick="stopRadio()">
 
 ⏹ STOP
 
 </button>
+
+
+</div>
+
 
 
 
@@ -173,19 +378,46 @@ font-weight:bold;
 
 
 
-<a class="instagram" href="https://www.instagram.com/urbanasurchingolo/" target="_blank">
+
+<div class="redes">
+
+
+<a class="instagram"
+
+href="https://www.instagram.com/urbanasurchingolo/"
+
+target="_blank">
+
 📸 Instagram @urbanasurchingolo
+
 </a>
 
 
-<a class="facebook" href="https://www.facebook.com/profile.php?id=61574009805190" target="_blank">
+
+<a class="facebook"
+
+href="https://www.facebook.com/profile.php?id=61574009805190"
+
+target="_blank">
+
 👍 Facebook David Quinteros
+
 </a>
 
 
-<a class="youtube" href="https://www.youtube.com/@urbanasur32" target="_blank">
+
+<a class="youtube"
+
+href="https://www.youtube.com/@urbanasur32"
+
+target="_blank">
+
 ▶ YouTube @urbanasur32
+
 </a>
+
+
+</div>
 
 
 </div>
@@ -194,7 +426,9 @@ font-weight:bold;
 
 <script>
 
-let radio=document.getElementById("radio");
+
+const radio=document.getElementById("radio");
+
 
 
 function playRadio(){
@@ -204,6 +438,7 @@ radio.play();
 }
 
 
+
 function stopRadio(){
 
 radio.pause();
@@ -211,6 +446,7 @@ radio.pause();
 radio.currentTime=0;
 
 }
+
 
 </script>
 
