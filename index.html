@@ -11,174 +11,260 @@
 <style>
 
 body{
-    background:
-    linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.85)),
-    url("https://images.unsplash.com/photo-1598488035139-bdbb2231ce04")
-    center/cover no-repeat;
 
-    color:white;
-    font-family:Arial,Helvetica,sans-serif;
+background:
+linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.85)),
+url("https://images.unsplash.com/photo-1598488035139-bdbb2231ce04")
+center/cover no-repeat;
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
+color:white;
+font-family:Arial,Helvetica,sans-serif;
 
-    height:100vh;
-    margin:0;
+display:flex;
+justify-content:center;
+align-items:center;
+
+height:100vh;
+margin:0;
+
 }
 
 
-/* CARTEL EN VIVO */
+/* CAJA PRINCIPAL */
+
+.player{
+
+width:360px;
+
+background:rgba(15,15,15,.92);
+
+border:2px solid #cc0000;
+
+border-radius:20px;
+
+padding:25px;
+
+text-align:center;
+
+box-shadow:
+0 0 25px red,
+0 0 50px rgba(255,0,0,.5);
+
+}
+
+
+/* LOGO */
+
+.logo{
+
+font-size:32px;
+
+font-weight:bold;
+
+color:#ff2222;
+
+text-shadow:
+0 0 10px red,
+0 0 20px red;
+
+margin-bottom:10px;
+
+}
+
+
+
+/* EN VIVO */
 
 .live{
-    display:inline-block;
-    background:#cc0000;
-    color:white;
-    padding:8px 20px;
-    border-radius:20px;
-    font-weight:bold;
-    animation:parpadeo 1s infinite;
+
+display:inline-block;
+
+background:#cc0000;
+
+padding:8px 20px;
+
+border-radius:20px;
+
+font-weight:bold;
+
+animation:parpadeo 1s infinite;
+
 }
 
 
 @keyframes parpadeo{
-    50%{
-        opacity:.4;
-    }
-}
 
+50%{
 
-/* REPRODUCTOR */
-
-.player{
-
-    width:340px;
-
-    background:rgba(20,20,20,.90);
-
-    border:2px solid #cc0000;
-
-    border-radius:15px;
-
-    padding:25px;
-
-    text-align:center;
-
-    box-shadow:
-    0 0 20px red,
-    0 0 40px rgba(255,0,0,.5);
+opacity:.4;
 
 }
 
+}
+
+
+/* OYENTES */
+
+.listeners{
+
+margin-top:15px;
+
+background:#222;
+
+padding:8px;
+
+border-radius:10px;
+
+color:#00ff66;
+
+font-weight:bold;
+
+}
+
+
+
+/* ECUALIZADOR */
+
+.equalizer{
+
+height:60px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:end;
+
+gap:6px;
+
+margin:20px;
+
+}
+
+
+.bar{
+
+width:8px;
+
+background:#ff0000;
+
+animation:move 1s infinite ease-in-out;
+
+}
+
+
+.bar:nth-child(1){height:20px;animation-delay:.1s;}
+.bar:nth-child(2){height:45px;animation-delay:.2s;}
+.bar:nth-child(3){height:30px;animation-delay:.3s;}
+.bar:nth-child(4){height:55px;animation-delay:.4s;}
+.bar:nth-child(5){height:35px;animation-delay:.5s;}
+.bar:nth-child(6){height:50px;animation-delay:.6s;}
+.bar:nth-child(7){height:25px;animation-delay:.7s;}
+
+
+@keyframes move{
+
+50%{
+
+transform:scaleY(.4);
+
+}
+
+}
+
+
+
+/* TITULO */
 
 h2{
 
-    color:#ff2b2b;
-
-    font-size:28px;
-
-    text-shadow:0 0 10px red;
-
-}
-
-
-p{
-
-    color:#ddd;
+color:#ff3333;
 
 }
 
 
 /* BOTONES */
 
-
 button{
 
-    width:120px;
+width:120px;
 
-    padding:15px;
+padding:15px;
 
-    margin:10px;
+margin:10px;
 
-    border:none;
+border:none;
 
-    border-radius:8px;
+border-radius:8px;
 
-    font-size:18px;
+font-size:18px;
 
-    cursor:pointer;
+font-weight:bold;
 
-    font-weight:bold;
+cursor:pointer;
 
 }
 
 
 .play{
 
-    background:#00aa00;
+background:#00aa00;
 
-    color:white;
+color:white;
 
 }
 
 
 .stop{
 
-    background:#cc0000;
+background:#cc0000;
 
-    color:white;
-
-}
-
-
-button:hover{
-
-    transform:scale(1.05);
+color:white;
 
 }
+
 
 
 /* REDES */
 
+
 .redes{
 
-    margin-top:25px;
+margin-top:20px;
 
 }
 
 
 .redes a{
 
-    display:block;
+display:block;
 
-    margin:14px 0;
+margin:12px;
 
-    text-decoration:none;
+text-decoration:none;
 
-    font-weight:bold;
-
-    font-size:16px;
+font-weight:bold;
 
 }
 
 
 .instagram{
 
-    color:#ff4b91;
+color:#ff4b91;
 
 }
 
 
 .facebook{
 
-    color:#1877f2;
+color:#1877f2;
 
 }
 
 
 .youtube{
 
-    color:#ff0000;
+color:#ff0000;
 
 }
 
@@ -194,23 +280,59 @@ button:hover{
 <div class="player">
 
 
-<div class="live">🔴 EN VIVO</div>
+<div class="logo">
+
+🎸 URBANA SUR FM
+
+</div>
 
 
-<h2>🎸 URBANA SUR FM</h2>
+<div class="live">
+
+🔴 EN VIVO
+
+</div>
 
 
-<p>📻 Radio Online 24 Horas</p>
+<div class="listeners">
+
+👥 Oyentes ahora: 1
+
+</div>
+
+
+
+<div class="equalizer">
+
+<div class="bar"></div>
+<div class="bar"></div>
+<div class="bar"></div>
+<div class="bar"></div>
+<div class="bar"></div>
+<div class="bar"></div>
+<div class="bar"></div>
+
+</div>
+
+
+
+<h2>📻 Radio Online 24 Horas</h2>
+
 
 
 <button class="play" onclick="playRadio()">
+
 ▶ PLAY
+
 </button>
 
 
 <button class="stop" onclick="stopRadio()">
+
 ■ STOP
+
 </button>
+
 
 
 <audio id="radio">
@@ -224,32 +346,23 @@ button:hover{
 <div class="redes">
 
 
-<a class="instagram"
-href="https://www.instagram.com/urbanasurchingolo/"
-target="_blank">
+<a class="instagram" href="https://www.instagram.com/urbanasurchingolo/" target="_blank">
 
-📸 Instagram  
-@urbanasurchingolo
+📸 Instagram @urbanasurchingolo
 
 </a>
 
 
-<a class="facebook"
-href="https://www.facebook.com/profile.php?id=61574009805190"
-target="_blank">
+<a class="facebook" href="https://www.facebook.com/profile.php?id=61574009805190" target="_blank">
 
-👍 Facebook  
-David Quinteros
+👍 Facebook David Quinteros
 
 </a>
 
 
-<a class="youtube"
-href="https://www.youtube.com/@urbanasur32"
-target="_blank">
+<a class="youtube" href="https://www.youtube.com/@urbanasur32" target="_blank">
 
-▶ YouTube  
-@urbanasur32
+▶ YouTube @urbanasur32
 
 </a>
 
@@ -263,21 +376,22 @@ target="_blank">
 
 <script>
 
+
 const radio=document.getElementById("radio");
 
 
 function playRadio(){
 
-    radio.play();
+radio.play();
 
 }
 
 
 function stopRadio(){
 
-    radio.pause();
+radio.pause();
 
-    radio.currentTime=0;
+radio.currentTime=0;
 
 }
 
