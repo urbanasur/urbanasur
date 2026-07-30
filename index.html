@@ -11,13 +11,12 @@
 <style>
 
 body{
-
     background:
-    linear-gradient(rgba(0,0,0,.70),rgba(0,0,0,.80)),
+    linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.85)),
     url("https://images.unsplash.com/photo-1598488035139-bdbb2231ce04")
     center/cover no-repeat;
 
-    color:#fff;
+    color:white;
     font-family:Arial,Helvetica,sans-serif;
 
     display:flex;
@@ -26,45 +25,36 @@ body{
 
     height:100vh;
     margin:0;
-
 }
 
 
 /* CARTEL EN VIVO */
 
 .live{
-
     display:inline-block;
     background:#cc0000;
     color:white;
-    padding:8px 18px;
+    padding:8px 20px;
     border-radius:20px;
     font-weight:bold;
     animation:parpadeo 1s infinite;
-
 }
 
 
 @keyframes parpadeo{
-
     50%{
-
         opacity:.4;
-
     }
-
 }
 
 
-/* CAJA DEL REPRODUCTOR */
+/* REPRODUCTOR */
 
 .player{
 
     width:340px;
 
-    background:rgba(20,20,20,.88);
-
-    backdrop-filter:blur(8px);
+    background:rgba(20,20,20,.90);
 
     border:2px solid #cc0000;
 
@@ -81,14 +71,9 @@ body{
 }
 
 
-
-/* TITULO */
-
 h2{
 
     color:#ff2b2b;
-
-    margin-top:0;
 
     font-size:28px;
 
@@ -104,8 +89,8 @@ p{
 }
 
 
-
 /* BOTONES */
+
 
 button{
 
@@ -128,17 +113,13 @@ button{
 }
 
 
-
 .play{
 
     background:#00aa00;
 
     color:white;
 
-    box-shadow:0 0 10px green;
-
 }
-
 
 
 .stop{
@@ -147,10 +128,7 @@ button{
 
     color:white;
 
-    box-shadow:0 0 10px red;
-
 }
-
 
 
 button:hover{
@@ -160,7 +138,6 @@ button:hover{
 }
 
 
-
 /* REDES */
 
 .redes{
@@ -168,7 +145,6 @@ button:hover{
     margin-top:25px;
 
 }
-
 
 
 .redes a{
@@ -227,24 +203,17 @@ button:hover{
 <p>📻 Radio Online 24 Horas</p>
 
 
-
 <button class="play" onclick="playRadio()">
-
 ▶ PLAY
-
 </button>
-
 
 
 <button class="stop" onclick="stopRadio()">
-
 ■ STOP
-
 </button>
 
 
-
-<audio id="radio" preload="none">
+<audio id="radio">
 
 <source src="https://sapircast.caster.fm:19235/vV9Du?token=31f177849cb0bb3341f4e7d8761f9798" type="audio/mpeg">
 
@@ -265,7 +234,6 @@ target="_blank">
 </a>
 
 
-
 <a class="facebook"
 href="https://www.facebook.com/profile.php?id=61574009805190"
 target="_blank">
@@ -274,7 +242,6 @@ target="_blank">
 David Quinteros
 
 </a>
-
 
 
 <a class="youtube"
@@ -287,12 +254,10 @@ target="_blank">
 </a>
 
 
-
 </div>
 
 
 </div>
-
 
 
 
@@ -303,22 +268,21 @@ const radio=document.getElementById("radio");
 
 function playRadio(){
 
-radio.play();
+    radio.play();
 
 }
 
 
 function stopRadio(){
 
-radio.pause();
+    radio.pause();
 
-radio.currentTime=0;
+    radio.currentTime=0;
 
 }
 
 
 </script>
-
 
 
 </body>
