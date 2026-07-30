@@ -1,413 +1,168 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Urbana Sur FM</title>
 
 <style>
-
 body{
-margin:0;
-min-height:100vh;
-
-background:
-linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.85)),
-url("https://images.unsplash.com/photo-1598488035139-bdbb2231ce04")
-center/cover no-repeat;
-
-font-family:Arial,Helvetica,sans-serif;
-
-display:flex;
-justify-content:center;
-align-items:center;
-
-color:white;
+    margin:0;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:Arial,Helvetica,sans-serif;
+    background:
+    linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.85)),
+    url("https://images.unsplash.com/photo-1598488035139-bdbb2231ce04")
+    center/cover no-repeat;
+    color:#fff;
 }
 
-
-.caja{
-
-width:380px;
-
-background:rgba(15,15,15,.92);
-
-padding:25px;
-
-border-radius:20px;
-
-border:2px solid red;
-
-text-align:center;
-
-box-shadow:
-0 0 25px red,
-0 0 50px rgba(255,0,0,.5);
-
+.player{
+    width:380px;
+    background:rgba(15,15,15,.92);
+    border:2px solid #cc0000;
+    border-radius:20px;
+    padding:25px;
+    text-align:center;
+    box-shadow:0 0 25px red;
 }
-
-
 
 h1{
-
-color:#ff2222;
-
-font-size:34px;
-
-margin-top:0;
-
-text-shadow:0 0 15px red;
-
+    color:#ff2b2b;
+    margin-top:0;
+    text-shadow:0 0 10px red;
 }
-
-
 
 .live{
-
-display:inline-block;
-
-background:#cc0000;
-
-padding:8px 22px;
-
-border-radius:20px;
-
-font-weight:bold;
-
-animation:parpadeo 1s infinite;
-
+    display:inline-block;
+    background:#cc0000;
+    color:#fff;
+    padding:8px 18px;
+    border-radius:20px;
+    font-weight:bold;
+    animation:blink 1s infinite;
 }
 
-
-@keyframes parpadeo{
-
-50%{
-opacity:.4;
+@keyframes blink{
+    50%{opacity:.4;}
 }
-
-}
-
-
-
 
 .eq{
-
-height:70px;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-gap:7px;
-
-margin:20px;
-
+    display:flex;
+    justify-content:center;
+    align-items:flex-end;
+    gap:6px;
+    height:60px;
+    margin:20px 0;
 }
-
-
 
 .eq span{
-
-width:10px;
-
-height:45px;
-
-background:red;
-
-animation:sonido .8s infinite;
-
+    width:8px;
+    background:#ff0000;
+    border-radius:4px;
+    animation:bars .8s infinite alternate;
 }
 
+.eq span:nth-child(1){height:20px;}
+.eq span:nth-child(2){height:45px;animation-delay:.1s;}
+.eq span:nth-child(3){height:30px;animation-delay:.2s;}
+.eq span:nth-child(4){height:55px;animation-delay:.3s;}
+.eq span:nth-child(5){height:25px;animation-delay:.4s;}
 
-
-.eq span:nth-child(2){
-
-animation-delay:.2s;
-
-height:60px;
-
+@keyframes bars{
+    from{transform:scaleY(.4);}
+    to{transform:scaleY(1);}
 }
-
-
-.eq span:nth-child(3){
-
-animation-delay:.4s;
-
-height:35px;
-
-}
-
-
-.eq span:nth-child(4){
-
-animation-delay:.6s;
-
-height:65px;
-
-}
-
-
-.eq span:nth-child(5){
-
-animation-delay:.8s;
-
-height:40px;
-
-}
-
-
-
-@keyframes sonido{
-
-50%{
-transform:scaleY(.3);
-}
-
-}
-
-
-
-
-.botones{
-
-display:flex;
-
-justify-content:center;
-
-gap:15px;
-
-}
-
-
 
 button{
-
-width:120px;
-
-padding:15px;
-
-border:none;
-
-border-radius:10px;
-
-font-size:18px;
-
-font-weight:bold;
-
-cursor:pointer;
-
+    width:120px;
+    padding:14px;
+    margin:8px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:18px;
+    font-weight:bold;
 }
-
-
 
 .play{
-
-background:#00aa00;
-
-color:white;
-
+    background:#00aa00;
+    color:#fff;
 }
-
-
 
 .stop{
-
-background:#cc0000;
-
-color:white;
-
+    background:#cc0000;
+    color:#fff;
 }
-
-
-
-button:hover{
-
-transform:scale(1.05);
-
-}
-
-
-
 
 .redes{
-
-margin-top:25px;
-
+    margin-top:20px;
 }
-
-
 
 .redes a{
-
-display:block;
-
-margin:12px;
-
-text-decoration:none;
-
-font-weight:bold;
-
+    display:block;
+    margin:10px 0;
+    text-decoration:none;
+    font-weight:bold;
 }
 
-
-
-.instagram{
-
-color:#ff4b91;
-
-}
-
-
-.facebook{
-
-color:#1877f2;
-
-}
-
-
-.youtube{
-
-color:#ff0000;
-
-}
-
-
+.instagram{color:#ff4b91;}
+.facebook{color:#1877f2;}
+.youtube{color:#ff0000;}
 </style>
-
 </head>
-
 
 <body>
 
+<div class="player">
 
-<div class="caja">
-
+<div class="live">🔴 EN VIVO</div>
 
 <h1>🎸 URBANA SUR FM</h1>
 
-
-<div class="live">
-🔴 EN VIVO
-</div>
-
-
-<h2>📻 Radio Online 24 Horas</h2>
-
-
+<p>📻 Radio Online 24 Horas</p>
 
 <div class="eq">
-
 <span></span>
 <span></span>
 <span></span>
 <span></span>
 <span></span>
-
 </div>
 
+<button class="play" onclick="playRadio()">▶ PLAY</button>
+<button class="stop" onclick="stopRadio()">■ STOP</button>
 
-
-
-<div class="botones">
-
-
-<button class="play" onclick="playRadio()">
-
-▶ PLAY
-
-</button>
-
-
-
-<button class="stop" onclick="stopRadio()">
-
-⏹ STOP
-
-</button>
-
-
-</div>
-
-
-
-<audio id="radio">
-
-<source src="https://uk22freenew.listen2myradio.com/live.mp3?typeportmount=s1_30355_stream_739023668" type="audio/mpeg">
-
+<audio id="radio" preload="none">
+<source src="https://uk3freenew.listen2myradio.com/live.mp3?typeportmount=s1_18530_stream_94115581" type="audio/mpeg">
 </audio>
 
-
-
 <div class="redes">
+<a class="instagram" href="https://www.instagram.com/urbanasurchingolo/" target="_blank">📸 Instagram @urbanasurchingolo</a>
 
+<a class="facebook" href="https://www.facebook.com/profile.php?id=61574009805190" target="_blank">👍 Facebook David Quinteros</a>
 
-<a class="instagram"
-href="https://www.instagram.com/urbanasurchingolo/"
-target="_blank">
-
-📸 Instagram @urbanasurchingolo
-
-</a>
-
-
-
-<a class="facebook"
-href="https://www.facebook.com/profile.php?id=61574009805190"
-target="_blank">
-
-👍 Facebook David Quinteros
-
-</a>
-
-
-
-<a class="youtube"
-href="https://www.youtube.com/@urbanasur32"
-target="_blank">
-
-▶ YouTube @urbanasur32
-
-</a>
-
-
+<a class="youtube" href="https://www.youtube.com/@urbanasur32" target="_blank">▶ YouTube @urbanasur32</a>
 </div>
 
-
 </div>
-
-
 
 <script>
-
 const radio=document.getElementById("radio");
 
-
 function playRadio(){
-
-radio.play();
-
+    radio.play().catch(e=>alert("No se pudo iniciar la reproducción: "+e));
 }
-
-
 
 function stopRadio(){
-
-radio.pause();
-
-radio.currentTime=0;
-
+    radio.pause();
+    radio.currentTime=0;
 }
-
-
 </script>
 
-
-
 </body>
-
 </html>
