@@ -7,21 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Urbana Sur FM</title>
-.live{
-    display:inline-block;
-    background:#cc0000;
-    color:white;
-    padding:8px 18px;
-    border-radius:20px;
-    font-weight:bold;
-    animation:parpadeo 1s infinite;
-}
 
-@keyframes parpadeo{
-    50%{
-        opacity:.4;
-    }
-}
 <style>
 
 body{
@@ -40,6 +26,32 @@ body{
 
     height:100vh;
     margin:0;
+
+}
+
+
+/* CARTEL EN VIVO */
+
+.live{
+
+    display:inline-block;
+    background:#cc0000;
+    color:white;
+    padding:8px 18px;
+    border-radius:20px;
+    font-weight:bold;
+    animation:parpadeo 1s infinite;
+
+}
+
+
+@keyframes parpadeo{
+
+    50%{
+
+        opacity:.4;
+
+    }
 
 }
 
@@ -94,7 +106,6 @@ p{
 
 
 /* BOTONES */
-
 
 button{
 
@@ -152,7 +163,6 @@ button:hover{
 
 /* REDES */
 
-
 .redes{
 
     margin-top:25px;
@@ -176,13 +186,11 @@ button:hover{
 }
 
 
-
 .instagram{
 
     color:#ff4b91;
 
 }
-
 
 
 .facebook{
@@ -192,7 +200,6 @@ button:hover{
 }
 
 
-
 .youtube{
 
     color:#ff0000;
@@ -200,9 +207,7 @@ button:hover{
 }
 
 
-
 </style>
-
 
 </head>
 
@@ -210,11 +215,12 @@ button:hover{
 <body>
 
 
-
 <div class="player">
 
 
 <div class="live">🔴 EN VIVO</div>
+
+
 <h2>🎸 URBANA SUR FM</h2>
 
 
@@ -292,9 +298,7 @@ target="_blank">
 
 <script>
 
-
 const radio=document.getElementById("radio");
-
 
 
 function playRadio(){
@@ -304,7 +308,6 @@ radio.play();
 }
 
 
-
 function stopRadio(){
 
 radio.pause();
@@ -312,7 +315,6 @@ radio.pause();
 radio.currentTime=0;
 
 }
-
 
 
 </script>
