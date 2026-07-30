@@ -11,72 +11,49 @@
 <style>
 
 body{
-
 margin:0;
-min-height:100vh;
+height:100vh;
 
 background:
 linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.85)),
 url("https://images.unsplash.com/photo-1598488035139-bdbb2231ce04")
-center/cover no-repeat;
+center/cover;
 
-font-family:Arial,Helvetica,sans-serif;
-
+font-family:Arial;
 display:flex;
 justify-content:center;
 align-items:center;
-
 color:white;
-
 }
 
 
 .caja{
 
-width:390px;
-
-background:rgba(15,15,15,.93);
-
-border:2px solid #cc0000;
-
-border-radius:20px;
-
+width:380px;
+background:#111;
 padding:25px;
-
+border-radius:20px;
+border:2px solid red;
 text-align:center;
-
 box-shadow:0 0 30px red;
 
 }
 
 
-.logo{
-
-font-size:34px;
-
-font-weight:bold;
+h1{
 
 color:#ff2222;
-
-text-shadow:0 0 15px red;
+text-shadow:0 0 10px red;
 
 }
 
 
 .live{
 
-display:inline-block;
-
-margin-top:15px;
-
 background:red;
-
 padding:8px 20px;
-
 border-radius:20px;
-
-font-weight:bold;
-
+display:inline-block;
 animation:parpadeo 1s infinite;
 
 }
@@ -84,219 +61,159 @@ animation:parpadeo 1s infinite;
 
 @keyframes parpadeo{
 
-50%{
-opacity:.4;
-}
+50%{opacity:.4;}
 
 }
 
 
 
-.ecualizador{
+button{
 
-height:60px;
-
-display:flex;
-
-justify-content:center;
-
-align-items:end;
-
-gap:6px;
-
+padding:15px 35px;
+font-size:20px;
+font-weight:bold;
+border:0;
+border-radius:10px;
+cursor:pointer;
+background:#00aa00;
+color:white;
 margin:20px;
 
 }
 
 
-.ecualizador span{
 
+.eq span{
+
+display:inline-block;
 width:8px;
-
+height:35px;
 background:red;
-
-animation:movimiento 1s infinite;
-
-}
-
-
-.ecualizador span:nth-child(1){height:20px;}
-.ecualizador span:nth-child(2){height:50px;}
-.ecualizador span:nth-child(3){height:35px;}
-.ecualizador span:nth-child(4){height:55px;}
-.ecualizador span:nth-child(5){height:25px;}
-
-
-
-@keyframes movimiento{
-
-50%{
-
-transform:scaleY(.3);
+margin:4px;
+animation:audio 1s infinite;
 
 }
+
+
+@keyframes audio{
+
+50%{height:10px;}
 
 }
 
 
 
-.radio{
-
-background:white;
-
-border-radius:10px;
-
-padding:10px;
-
-margin-top:15px;
-
-}
-
-
-.redes{
-
-margin-top:25px;
-
-}
-
-
-.redes a{
+a{
 
 display:block;
-
 margin:12px;
-
+text-decoration:none;
 font-weight:bold;
 
-text-decoration:none;
-
 }
 
 
-.instagram{
-
-color:#ff4b91;
-
-}
-
-
-.facebook{
-
-color:#1877f2;
-
-}
-
-
-.youtube{
-
-color:#ff0000;
-
-}
-
+.instagram{color:#ff4b91;}
+.facebook{color:#1877f2;}
+.youtube{color:red;}
 
 </style>
 
-
 </head>
-
 
 
 <body>
 
 
-
 <div class="caja">
 
 
-<div class="logo">
-
-🎸 URBANA SUR FM
-
-</div>
+<h1>🎸 URBANA SUR FM</h1>
 
 
 <div class="live">
-
 🔴 EN VIVO
-
 </div>
-
-
-
-<div class="ecualizador">
-
-<span></span>
-<span></span>
-<span></span>
-<span></span>
-<span></span>
-
-</div>
-
 
 
 <h2>📻 Radio Online 24 Horas</h2>
 
 
+<div class="eq">
 
-<div class="radio">
-
-
-<div class="cstrEmbed"
-
-data-type="newStreamPlayer"
-
-data-publicToken="743aea0d-2aef-435e-978a-baaf792348a5">
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
 
 </div>
 
 
-</div>
+<button onclick="playRadio()">
+
+▶ PLAY
+
+</button>
+
+
+<button onclick="stopRadio()">
+
+⏹ STOP
+
+</button>
 
 
 
+<audio id="radio">
 
-<div class="redes">
+<source src="https://sapircast.caster.fm:19235/vV9Du?token=31f177849cb0bb3341f4e7d8761f9798" type="audio/mpeg">
+
+</audio>
 
 
-<a class="instagram"
-href="https://www.instagram.com/urbanasurchingolo/"
-target="_blank">
 
+<a class="instagram" href="https://www.instagram.com/urbanasurchingolo/" target="_blank">
 📸 Instagram @urbanasurchingolo
-
 </a>
 
 
-
-<a class="facebook"
-href="https://www.facebook.com/profile.php?id=61574009805190"
-target="_blank">
-
+<a class="facebook" href="https://www.facebook.com/profile.php?id=61574009805190" target="_blank">
 👍 Facebook David Quinteros
-
 </a>
 
 
-
-<a class="youtube"
-href="https://www.youtube.com/@urbanasur32"
-target="_blank">
-
+<a class="youtube" href="https://www.youtube.com/@urbanasur32" target="_blank">
 ▶ YouTube @urbanasur32
-
 </a>
 
 
 </div>
 
 
-</div>
+
+<script>
+
+let radio=document.getElementById("radio");
 
 
+function playRadio(){
+
+radio.play();
+
+}
 
 
-<script src="https://cdn.cloud.caster.fm/widgets/js/streamPlayer.js"></script>
+function stopRadio(){
+
+radio.pause();
+
+radio.currentTime=0;
+
+}
+
+</script>
+
 
 
 </body>
