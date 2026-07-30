@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Urbana Sur FM</title>
+
+<style>
+
+body{
+
+    background:
+    linear-gradient(rgba(0,0,0,.70),rgba(0,0,0,.80)),
+    url("https://images.unsplash.com/photo-1598488035139-bdbb2231ce04")
+    center/cover no-repeat;
+
+    color:#fff;
+    font-family:Arial,Helvetica,sans-serif;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    height:100vh;
+    margin:0;
+
+}
+
+
+/* CAJA DEL REPRODUCTOR */
+
+.player{
+
+    width:340px;
+
+    background:rgba(20,20,20,.88);
+
+    backdrop-filter:blur(8px);
+
+    border:2px solid #cc0000;
+
+    border-radius:15px;
+
+    padding:25px;
+
+    text-align:center;
+
+    box-shadow:
+    0 0 20px red,
+    0 0 40px rgba(255,0,0,.5);
+
+}
+
+
+
+/* TITULO */
+
+h2{
+
+    color:#ff2b2b;
+
+    margin-top:0;
+
+    font-size:28px;
+
+    text-shadow:0 0 10px red;
+
+}
+
+
+p{
+
+    color:#ddd;
+
+}
+
+
+
+/* BOTONES */
+
+
+button{
+
+    width:120px;
+
+    padding:15px;
+
+    margin:10px;
+
+    border:none;
+
+    border-radius:8px;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    font-weight:bold;
+
+}
+
+
+
+.play{
+
+    background:#00aa00;
+
+    color:white;
+
+    box-shadow:0 0 10px green;
+
+}
+
+
+
+.stop{
+
+    background:#cc0000;
+
+    color:white;
+
+    box-shadow:0 0 10px red;
+
+}
+
+
+
+button:hover{
+
+    transform:scale(1.05);
+
+}
+
+
+
+/* REDES */
+
+
+.redes{
+
+    margin-top:25px;
+
+}
+
+
+
+.redes a{
+
+    display:block;
+
+    margin:14px 0;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+    font-size:16px;
+
+}
+
+
+
+.instagram{
+
+    color:#ff4b91;
+
+}
+
+
+
+.facebook{
+
+    color:#1877f2;
+
+}
+
+
+
+.youtube{
+
+    color:#ff0000;
+
+}
+
+
+
+</style>
+
+
+</head>
+
+
+<body>
+
+
+
+<div class="player">
+
+
+
+<h2>🎸 URBANA SUR FM</h2>
+
+
+<p>📻 Radio Online 24 Horas</p>
+
+
+
+<button class="play" onclick="playRadio()">
+
+▶ PLAY
+
+</button>
+
+
+
+<button class="stop" onclick="stopRadio()">
+
+■ STOP
+
+</button>
+
+
+
+<audio id="radio" preload="none">
+
+<source src="https://sapircast.caster.fm:19235/vV9Du?token=31f177849cb0bb3341f4e7d8761f9798" type="audio/mpeg">
+
+</audio>
+
+
+
+<div class="redes">
+
+
+<a class="instagram"
+href="https://www.instagram.com/urbanasurchingolo/"
+target="_blank">
+
+📸 Instagram  
+@urbanasurchingolo
+
+</a>
+
+
+
+<a class="facebook"
+href="https://www.facebook.com/profile.php?id=61574009805190"
+target="_blank">
+
+👍 Facebook  
+David Quinteros
+
+</a>
+
+
+
+<a class="youtube"
+href="https://www.youtube.com/@urbanasur32"
+target="_blank">
+
+▶ YouTube  
+@urbanasur32
+
+</a>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+<script>
+
+
+const radio=document.getElementById("radio");
+
+
+
+function playRadio(){
+
+radio.play();
+
+}
+
+
+
+function stopRadio(){
+
+radio.pause();
+
+radio.currentTime=0;
+
+}
+
+
+
+</script>
+
+
+
+</body>
+
+</html>
