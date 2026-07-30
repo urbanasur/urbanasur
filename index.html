@@ -30,11 +30,9 @@ margin:0;
 }
 
 
-/* CAJA PRINCIPAL */
-
 .player{
 
-width:360px;
+width:380px;
 
 background:rgba(15,15,15,.92);
 
@@ -53,12 +51,9 @@ box-shadow:
 }
 
 
-
-/* LOGO */
-
 .logo{
 
-font-size:32px;
+font-size:34px;
 
 font-weight:bold;
 
@@ -72,15 +67,13 @@ margin-bottom:15px;
 
 
 
-/* EN VIVO */
-
 .live{
 
 display:inline-block;
 
 background:#cc0000;
 
-padding:8px 20px;
+padding:8px 22px;
 
 border-radius:20px;
 
@@ -103,11 +96,9 @@ opacity:.4;
 
 
 
-/* ECUALIZADOR */
-
 .equalizer{
 
-height:55px;
+height:60px;
 
 display:flex;
 
@@ -115,7 +106,7 @@ justify-content:center;
 
 align-items:end;
 
-gap:6px;
+gap:7px;
 
 margin:20px;
 
@@ -124,11 +115,11 @@ margin:20px;
 
 .bar{
 
-width:8px;
+width:9px;
 
-background:red;
+background:#ff0000;
 
-animation:movimiento 1s infinite;
+animation:audio 1s infinite;
 
 }
 
@@ -140,7 +131,7 @@ animation:movimiento 1s infinite;
 .bar:nth-child(5){height:35px;animation-delay:.8s;}
 
 
-@keyframes movimiento{
+@keyframes audio{
 
 50%{
 
@@ -151,9 +142,6 @@ transform:scaleY(.3);
 }
 
 
-
-/* REPRODUCTOR */
-
 .radio{
 
 margin-top:20px;
@@ -161,8 +149,6 @@ margin-top:20px;
 }
 
 
-
-/* REDES */
 
 .redes{
 
@@ -201,6 +187,22 @@ color:#1877f2;
 .youtube{
 
 color:#ff0000;
+
+}
+
+
+.powered{
+
+font-size:12px;
+
+margin-top:10px;
+
+}
+
+
+.powered a{
+
+color:#aaa;
 
 }
 
@@ -251,6 +253,14 @@ color:#ff0000;
 data-type="newStreamPlayer"
 data-publicToken="743aea0d-2aef-435e-978a-baaf792348a5"
 data-theme="dark">
+</div>
+
+
+<div class="powered">
+
+<a href="https://caster.fm" target="_blank">
+Powered by Caster.fm
+</a>
 
 </div>
 
@@ -293,6 +303,7 @@ target="_blank">
 
 
 </div>
+
 
 
 <script src="https://cdn.cloud.caster.fm/widgets/embed.js"></script>
