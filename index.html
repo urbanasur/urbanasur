@@ -8,9 +8,12 @@
 
 <title>Urbana Sur FM</title>
 
+<link rel="stylesheet" href="https://cdn.cloud.caster.fm/widgets/css/stream-player.css">
+
 <style>
 
 body{
+
 margin:0;
 min-height:100vh;
 
@@ -26,14 +29,15 @@ justify-content:center;
 align-items:center;
 
 color:white;
+
 }
 
 
 .player{
 
-width:380px;
+width:390px;
 
-background:rgba(15,15,15,.92);
+background:rgba(10,10,10,.92);
 
 border:2px solid #cc0000;
 
@@ -43,9 +47,12 @@ padding:25px;
 
 text-align:center;
 
-box-shadow:0 0 25px red;
+box-shadow:
+0 0 25px red,
+0 0 50px rgba(255,0,0,.5);
 
 }
+
 
 
 .logo{
@@ -59,6 +66,7 @@ color:#ff2222;
 text-shadow:0 0 15px red;
 
 }
+
 
 
 .live{
@@ -80,6 +88,7 @@ animation:parpadeo 1s infinite;
 }
 
 
+
 @keyframes parpadeo{
 
 50%{
@@ -92,15 +101,15 @@ opacity:.4;
 
 .equalizer{
 
+height:60px;
+
 display:flex;
 
 justify-content:center;
 
 align-items:end;
 
-gap:6px;
-
-height:60px;
+gap:7px;
 
 margin:20px;
 
@@ -109,7 +118,7 @@ margin:20px;
 
 .bar{
 
-width:8px;
+width:9px;
 
 background:red;
 
@@ -140,10 +149,17 @@ transform:scaleY(.3);
 
 margin-top:20px;
 
+background:white;
+
+border-radius:10px;
+
+padding:10px;
+
 }
 
 
-/* redes */
+
+/* REDES */
 
 .redes{
 
@@ -166,21 +182,51 @@ font-weight:bold;
 
 
 .instagram{
+
 color:#ff4b91;
+
 }
 
 
 .facebook{
+
 color:#1877f2;
+
 }
 
 
 .youtube{
+
 color:#ff0000;
+
 }
 
 
 </style>
+
+
+<script>
+
+window.casterfmCloud={};
+
+window.casterfmCloud.frameId="14pk6";
+
+window.casterfmCloud.userUdid="a214b679-a14b-47d2-bea5-b45d46c85953";
+
+window.casterfmCloud.assetsUrl="//cdn.cloud.caster.fm/";
+
+window.casterfmCloud.streamToken="31f177849cb0bb3341f4e7d8761f9798";
+
+window.casterfmCloud.singleChannelKey=null;
+
+window.casterfmCloud.theme="dark";
+
+window.casterfmCloud.account={
+public_token:"743aea0d-2aef-435e-978a-baaf792348a5"
+};
+
+</script>
+
 
 </head>
 
@@ -192,13 +238,18 @@ color:#ff0000;
 
 
 <div class="logo">
+
 🎸 URBANA SUR FM
+
 </div>
 
 
 <div class="live">
+
 🔴 EN VIVO
+
 </div>
+
 
 
 <div class="equalizer">
@@ -212,21 +263,39 @@ color:#ff0000;
 </div>
 
 
+
 <h2>📻 Radio Online 24 Horas</h2>
+
 
 
 <div class="radio">
 
 
-<!-- REPRODUCTOR OFICIAL CASTER.FM -->
+<div class="player-wrapper">
+
 
 <div class="cstrEmbed"
+
 data-type="newStreamPlayer"
+
 data-publicToken="743aea0d-2aef-435e-978a-baaf792348a5">
+
+</div>
+
+
+<a href="https://www.caster.fm/"
+target="_blank">
+
+Powered By Caster.fm Streaming Solutions
+
+</a>
+
+
 </div>
 
 
 </div>
+
 
 
 
@@ -234,7 +303,9 @@ data-publicToken="743aea0d-2aef-435e-978a-baaf792348a5">
 
 
 <a class="instagram"
+
 href="https://www.instagram.com/urbanasurchingolo/"
+
 target="_blank">
 
 📸 Instagram @urbanasurchingolo
@@ -242,8 +313,11 @@ target="_blank">
 </a>
 
 
+
 <a class="facebook"
+
 href="https://www.facebook.com/profile.php?id=61574009805190"
+
 target="_blank">
 
 👍 Facebook David Quinteros
@@ -251,8 +325,11 @@ target="_blank">
 </a>
 
 
+
 <a class="youtube"
+
 href="https://www.youtube.com/@urbanasur32"
+
 target="_blank">
 
 ▶ YouTube @urbanasur32
@@ -267,7 +344,7 @@ target="_blank">
 
 
 
-<script src="https://cdn.cloud.caster.fm/widgets/embed.js"></script>
+<script src="//cdn.cloud.caster.fm/widgets/js/streamPlayer.js"></script>
 
 
 </body>
