@@ -11,22 +11,21 @@
 <style>
 
 body{
+margin:0;
+min-height:100vh;
 
 background:
 linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.85)),
 url("https://images.unsplash.com/photo-1598488035139-bdbb2231ce04")
 center/cover no-repeat;
 
-color:white;
 font-family:Arial,Helvetica,sans-serif;
 
 display:flex;
 justify-content:center;
 align-items:center;
 
-min-height:100vh;
-margin:0;
-
+color:white;
 }
 
 
@@ -44,9 +43,7 @@ padding:25px;
 
 text-align:center;
 
-box-shadow:
-0 0 25px red,
-0 0 50px rgba(255,0,0,.5);
+box-shadow:0 0 25px red;
 
 }
 
@@ -61,19 +58,18 @@ color:#ff2222;
 
 text-shadow:0 0 15px red;
 
-margin-bottom:15px;
-
 }
-
 
 
 .live{
 
 display:inline-block;
 
+margin-top:15px;
+
 background:#cc0000;
 
-padding:8px 22px;
+padding:8px 20px;
 
 border-radius:20px;
 
@@ -87,9 +83,7 @@ animation:parpadeo 1s infinite;
 @keyframes parpadeo{
 
 50%{
-
 opacity:.4;
-
 }
 
 }
@@ -98,15 +92,15 @@ opacity:.4;
 
 .equalizer{
 
-height:60px;
-
 display:flex;
 
 justify-content:center;
 
 align-items:end;
 
-gap:7px;
+gap:6px;
+
+height:60px;
 
 margin:20px;
 
@@ -115,9 +109,9 @@ margin:20px;
 
 .bar{
 
-width:9px;
+width:8px;
 
-background:#ff0000;
+background:red;
 
 animation:audio 1s infinite;
 
@@ -131,15 +125,15 @@ animation:audio 1s infinite;
 .bar:nth-child(5){height:35px;animation-delay:.8s;}
 
 
+
 @keyframes audio{
 
 50%{
-
 transform:scaleY(.3);
-
 }
 
 }
+
 
 
 .radio{
@@ -149,6 +143,7 @@ margin-top:20px;
 }
 
 
+/* redes */
 
 .redes{
 
@@ -171,39 +166,17 @@ font-weight:bold;
 
 
 .instagram{
-
 color:#ff4b91;
-
 }
 
 
 .facebook{
-
 color:#1877f2;
-
 }
 
 
 .youtube{
-
 color:#ff0000;
-
-}
-
-
-.powered{
-
-font-size:12px;
-
-margin-top:10px;
-
-}
-
-
-.powered a{
-
-color:#aaa;
-
 }
 
 
@@ -219,16 +192,12 @@ color:#aaa;
 
 
 <div class="logo">
-
 🎸 URBANA SUR FM
-
 </div>
 
 
 <div class="live">
-
 🔴 EN VIVO
-
 </div>
 
 
@@ -249,19 +218,11 @@ color:#aaa;
 <div class="radio">
 
 
+<!-- REPRODUCTOR OFICIAL CASTER.FM -->
+
 <div class="cstrEmbed"
 data-type="newStreamPlayer"
-data-publicToken="743aea0d-2aef-435e-978a-baaf792348a5"
-data-theme="dark">
-</div>
-
-
-<div class="powered">
-
-<a href="https://caster.fm" target="_blank">
-Powered by Caster.fm
-</a>
-
+data-publicToken="743aea0d-2aef-435e-978a-baaf792348a5">
 </div>
 
 
